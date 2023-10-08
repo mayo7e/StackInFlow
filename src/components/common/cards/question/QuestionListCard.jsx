@@ -6,6 +6,24 @@ import styles from "./questionlistcard.style"
 
 
 const QuestionListCard = ({Question}) => {
+
+    const renderTags = () =>(
+        <View style={styles.tagContainer} >
+               { Question.tags.map(tag => (
+                    <View  >
+                        <Text
+                            style={styles.tag}
+                            key={tag}
+                        >
+                            {tag}
+
+                        </Text>
+
+                    </View>
+                ))}
+
+        </View>
+    )
   return (
     <View style={styles.container} >
 
@@ -20,15 +38,11 @@ const QuestionListCard = ({Question}) => {
             style={styles.bodyText}
             numberOfLines={2}
         >
-            {Question.body_markdown}</Text>
+            {Question.body_markdown}
+            
+        </Text>
 
-            <Text
-                style={styles.tags}
-            >
-                {Question.tags[0]} {Question.tags[1]} {Question.tags[2]}{" "}
-                {Question.tags[3]}{" "}
-                {Question.tags[4]}
-             </Text>
+             {renderTags()}
 
     </View>
   )

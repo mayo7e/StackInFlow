@@ -24,7 +24,19 @@ const styles = StyleSheet.create({
     fontSize: 11,
     color: "dimgray",
   },
-  tags:{}
+  tagContainer:{
+    flex: 1,
+    flexDirection: "row",
+    backgroundColor: "lightblue",
+    gap: 5.
+  
+  },
+  tags:{
+   
+  },
+  tag:{
+   
+  },
 });
 
 export default styles;
