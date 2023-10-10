@@ -10,7 +10,7 @@ const QuestionListCard = ({Question}) => {
     const renderTags = () =>(
         <View style={styles.tagContainer} >
                { Question.tags.map(tag => (
-                    <View  >
+                    <View style={styles.tags} >
                         <Text
                             style={styles.tag}
                             key={tag}
@@ -22,6 +22,7 @@ const QuestionListCard = ({Question}) => {
                     </View>
                 ))}
 
+                <Text style={styles.time}  >asked {new Date(Question.creation_date * 1000).toDateString()}</Text>
         </View>
     )
   return (

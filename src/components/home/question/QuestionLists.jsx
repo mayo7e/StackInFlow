@@ -5,16 +5,18 @@ import QuestionListCard from "../../common/cards/question/QuestionListCard"
 
 import styles from "./questionlists.style"
 
-import Questions from "../../../../data/questions.json"
 
-const Question = Questions.items[1];
+// const Question = Questions.items.map((eachQuestion) => (
+//   eachQuestion));
 
 
-const QuestionList = () => {
+const QuestionList = ({Question, handleCardPress}) => {
   return (
-   <View>
+   <View style={styles.container} >
        <QuestionListCard
           Question={Question}
+          handleCardPress={handleCardPress}
+          
        />
    </View>
   )

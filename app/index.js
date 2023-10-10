@@ -1,8 +1,12 @@
 
 import { Stack} from "expo-router";
 
-import { View, Text, ScrollView, SafeAreaView } from "react-native"
+import { View, Text, FlatList, ScrollView, SafeAreaView } from "react-native"
 import QuestionLists from "../src/components/home/question/QuestionLists";
+
+import Questions from "../data/questions.json"
+
+
 
 
 const Home = () => {
@@ -29,9 +33,20 @@ const Home = () => {
 
                 />
 
-                <ScrollView>
+                <ScrollView showsVerticalScrollIndicator={false} >
                     <View>
-                        <QuestionLists />
+
+                        <FlatList 
+                            data={Questions.items}
+                            renderItem={({item}) => (
+                            <QuestionLists 
+                                Question={item}
+                            />
+                            
+                            )}
+                            
+                        />
+
                     </View>
                 </ScrollView>
         </SafeAreaView>

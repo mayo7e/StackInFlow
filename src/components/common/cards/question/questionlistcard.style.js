@@ -27,15 +27,26 @@ const styles = StyleSheet.create({
   tagContainer:{
     flex: 1,
     flexDirection: "row",
-    backgroundColor: "lightblue",
-    gap: 5.
-  
+    flexWrap: "wrap",
+    gap: 5,
+    alignItems: "center",
+
   },
   tags:{
-   
+      paddingTop: 10,
   },
   tag:{
-   
+    backgroundColor: "#e1ecf4",
+    color: "#39739d",
+    padding: 5,
+    borderRadius: 4,
+    overflow: "hidden",
+    fontSize: 12,
+  },
+  time:{
+    marginLeft: "auto",
+    color: "dimgray",
+    fontSize: 12,
   },
 });
 
