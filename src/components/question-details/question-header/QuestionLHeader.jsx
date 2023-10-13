@@ -1,13 +1,13 @@
 
 
 import {View, Text} from "react-native"
-import styles from "./questionlistcard.style"
+import styles from "./questionheader.style"
 
 import {Link} from "expo-router"
 
 
 
-const QuestionListCard = ({Question}) => {
+const QuestionHeader = ({Question}) => {
 
     const renderTags = () =>(
         <View style={styles.tagContainer} >
@@ -54,4 +54,4 @@ const QuestionListCard = ({Question}) => {
   )
 }
 
-export default QuestionListCard
+export default QuestionHeader
