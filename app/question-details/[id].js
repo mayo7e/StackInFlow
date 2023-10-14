@@ -1,9 +1,11 @@
-import {View, Text} from "react-native"
+import {View, Text, FlatList, ScrollView} from "react-native"
 import {  useGlobalSearchParams } from "expo-router"
 
 import QuestionHeader from "../../src/components/question-details/question-header/QuestionLHeader"
+import AnswerList from "../../src/components/question-details/answer-details/AnswerDetails"
 
 import Questions from "../../data/questions.json"
+import Answers from "../../data/answers.json"
 
 const QuestionDetails = () => {
         const {id}= useGlobalSearchParams()
@@ -16,11 +18,23 @@ const QuestionDetails = () => {
         }
 
         return(
+          
             <View style={{backgroundColor: "white", flex: 1}} >
-              <QuestionHeader 
-                Question={Question}
-              />
+                
+                <FlatList 
+                        data={Answers.items}
+                        renderItem={({item}) => (
+                        <AnswerList 
+                            answer={item}
+                        />
+                        
+                        )}
+                        ListHeaderComponent={() => <QuestionHeader Question={Question}/>}
+                    />
+
             </View>
+         
+        
         )
 }
 
