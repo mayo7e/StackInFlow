@@ -16,7 +16,7 @@ const QuestionDetails = () => {
         }
 
         return(
-            <View>
+            <View style={{backgroundColor: "white", flex: 1}} >
               <QuestionHeader 
                 Question={Question}
               />

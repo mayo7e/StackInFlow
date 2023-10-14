@@ -17,13 +17,14 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
   title:{
-    color: "#0063bf",
+    color: "#3b4045",
     marginVertical: 4,
+    fontSize: 20,
+    fontWeight: "500",
+    lineHeight: 28,
+    
   },
-  bodyText:{
-    fontSize: 11,
-    color: "dimgray",
-  },
+  bodyText:{},
   tagContainer:{
     flex: 1,
     flexDirection: "row",
@@ -47,6 +48,11 @@ const styles = StyleSheet.create({
     marginLeft: "auto",
     color: "dimgray",
     fontSize: 12,
+  },
+  seperator: {
+    borderBottomWidth: 0.5,
+    borderColor: "lightgray",
+    marginVertical: 10,
   },
 });
 

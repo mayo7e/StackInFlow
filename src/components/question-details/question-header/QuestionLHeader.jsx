@@ -31,17 +31,18 @@ const QuestionHeader = ({Question}) => {
     
     <Link href= {`/question-details/${Question.question_id}`} >
         <View style={styles.container} >
+            <Text style={styles.title} >{Question.title}</Text>
 
             <Text style={styles.statInfo} >
                 {Question.up_vote_count} votes · {Question.answer_count} answers ·{" "}
                 {Question.view_count} views
             </Text>
 
-            <Text style={styles.title} >{Question.title}</Text>
+            <View  style={styles.seperator} />
             
             <Text
                 style={styles.bodyText}
-                numberOfLines={2}
+                // numberOfLines={2}
             >
                 {Question.body_markdown}
                 
