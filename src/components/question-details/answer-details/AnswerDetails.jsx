@@ -4,6 +4,8 @@ import { AntDesign, Entypo } from '@expo/vector-icons';
 
 import styles from './answerdetails.style';
 
+import {decode} from "html-entities"
+
 const AnswerList = ({ answer }) => {
   return (
     <View style={styles.container}>
@@ -21,7 +23,7 @@ const AnswerList = ({ answer }) => {
         )}
       </View>
       <View style={styles.bodyContainer}>
-        <Text style={styles.body}>{answer.body_markdown}</Text>
+        <Text style={styles.body}>{decode(answer.body_markdown)}</Text>
 
         <Text style={styles.time}>
           answered {new Date(answer.creation_date * 1000).toDateString()}

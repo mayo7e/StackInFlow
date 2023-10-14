@@ -5,6 +5,8 @@ import styles from "./questionheader.style"
 
 import {Link} from "expo-router"
 
+import {decode} from "html-entities"
+
 
 
 const QuestionHeader = ({Question}) => {
@@ -31,7 +33,7 @@ const QuestionHeader = ({Question}) => {
     
     <Link href= {`/question-details/${Question.question_id}`} >
         <View style={styles.container} >
-            <Text style={styles.title} >{Question.title}</Text>
+            <Text style={styles.title} >{decode(Question.title)}</Text>
 
             <Text style={styles.statInfo} >
                 {Question.up_vote_count} votes · {Question.answer_count} answers ·{" "}
@@ -44,7 +46,7 @@ const QuestionHeader = ({Question}) => {
                 style={styles.bodyText}
                 // numberOfLines={2}
             >
-                {Question.body_markdown}
+                {decode(Question.body_markdown)}
                 
             </Text>
 

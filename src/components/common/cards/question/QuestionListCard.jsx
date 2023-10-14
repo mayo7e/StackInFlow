@@ -5,6 +5,8 @@ import styles from "./questionlistcard.style"
 
 import {Link} from "expo-router"
 
+import {decode} from "html-entities"
+
 
 
 const QuestionListCard = ({Question}) => {
@@ -37,13 +39,13 @@ const QuestionListCard = ({Question}) => {
                 {Question.view_count} views
             </Text>
 
-            <Text style={styles.title} >{Question.title}</Text>
+            <Text style={styles.title} >{decode(Question.title)}</Text>
             
             <Text
                 style={styles.bodyText}
                 numberOfLines={2}
             >
-                {Question.body_markdown}
+                {decode(Question.body_markdown)}
                 
             </Text>
 
