@@ -6,6 +6,8 @@ import styles from './answerdetails.style';
 
 import {decode} from "html-entities"
 
+import Markdown from 'react-native-markdown-display';
+
 const AnswerList = ({ answer }) => {
   return (
     <View style={styles.container}>
@@ -23,7 +25,7 @@ const AnswerList = ({ answer }) => {
         )}
       </View>
       <View style={styles.bodyContainer}>
-        <Text style={styles.body}>{decode(answer.body_markdown)}</Text>
+        <Markdown style={styles.body}>{decode(answer.body_markdown)}</Markdown>
 
         <Text style={styles.time}>
           answered {new Date(answer.creation_date * 1000).toDateString()}

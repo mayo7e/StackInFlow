@@ -7,6 +7,7 @@ import {Link} from "expo-router"
 
 import {decode} from "html-entities"
 
+import Markdown from 'react-native-markdown-display';
 
 
 const QuestionHeader = ({Question}) => {
@@ -42,13 +43,13 @@ const QuestionHeader = ({Question}) => {
 
             <View  style={styles.seperator} />
             
-            <Text
+            <Markdown
                 style={styles.bodyText}
                 // numberOfLines={2}
             >
                 {decode(Question.body_markdown)}
                 
-            </Text>
+            </Markdown>
 
                 {renderTags()}
 
