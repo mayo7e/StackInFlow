@@ -43,13 +43,7 @@ const QuestionHeader = ({Question}) => {
 
             <View  style={styles.seperator} />
             
-            <Markdown
-                style={styles.bodyText}
-                // numberOfLines={2}
-            >
-                {decode(Question.body_markdown)}
-                
-            </Markdown>
+            <Markdown>{decode(Question.body_markdown)}</Markdown>
 
                 {renderTags()}
 

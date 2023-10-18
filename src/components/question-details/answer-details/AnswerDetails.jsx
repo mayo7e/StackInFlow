@@ -25,7 +25,7 @@ const AnswerList = ({ answer }) => {
         )}
       </View>
       <View style={styles.bodyContainer}>
-        <Markdown style={styles.body}>{decode(answer.body_markdown)}</Markdown>
+        <Markdown>{decode(answer.body_markdown)}</Markdown>
 
         <Text style={styles.time}>
           answered {new Date(answer.creation_date * 1000).toDateString()}
