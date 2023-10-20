@@ -1,4 +1,4 @@
 
-schema @sdl(files: []) {
+schema @sdl(files: ["stackinflow.graphql"]) {
   query: Query
 }
